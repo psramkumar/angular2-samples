@@ -1,0 +1,21 @@
+{
+  "name": "contactplus",
+  "description": "Contact Plus",
+  "main": "",
+  "authors": [
+    "Nirmal Kumar <vnknirmalkumar@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
