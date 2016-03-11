@@ -14,7 +14,7 @@ export class ContactService {
     //getContacts() { return Promise.resolve(CONTACTS); }
 	
     getContacts(): any {
-        return this.http.get('/getContacts')
+        return this.http.get('/users/getContacts')
             ;//.map((res) => res.json());
 
             //it is important to have this subscribe call, since the 

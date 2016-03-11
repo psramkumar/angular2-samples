@@ -1,7 +1,17 @@
 import express = require('express');
 import path = require('path');
+
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
 var engine = require('ejs-mate');
 var port: number = process.env.PORT || 3000;
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
+
 var app = express();
  
 app.use('/client', express.static(path.resolve('./built/client')));
@@ -12,50 +22,59 @@ app.engine('ejs',engine);
 
 app.set('views','./built/client');
 app.set('view engine','ejs');
- 
-var renderIndex = (req: express.Request, res: express.Response) => {
-    res.render('index',{title:'Angular2-Samples'});
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(logger('dev'));
+app.use(bodyParser.json ( ));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser()); 
+
+app.use('/', routes);
+app.use('/users', users);
+
+/*
+/// catch 404 and forwarding to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+
+/// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
 }
- 
-app.get('/', renderIndex);
- 
-var jsonObj = [{
-  "id": 1,
-  "name": "Terry"
-}, {
-  "id": 2,
-  "name": "Amanda"
-}, {
-  "id": 3,
-  "name": "Teresa"
-}, {
-  "id": 4,
-  "name": "Juan"
-}, {
-  "id": 5,
-  "name": "Louise"
-}, {
-  "id": 6,
-  "name": "Sean"
-}, {
-  "id": 7,
-  "name": "Susan"
-}, {
-  "id": 8,
-  "name": "Ruby"
-}, {
-  "id": 9,
-  "name": "Elizabeth"
-}, {
-  "id": 10,
-  "name": "Wanda"
-}];
-app.get('/getContacts',function(req: express.Request, res: express.Response){
-    res.send(jsonObj);
-}); 
- 
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
+
+*/
+/*
 var server = app.listen(port, function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log('This express app is listening on %s', host, port);
 });
+*/
+app.listen(3000, function() { 
+  console.log("server started 3000");
+});
+module.exports = app;
