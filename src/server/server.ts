@@ -11,9 +11,10 @@ var port: number = process.env.PORT || 3000;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var tasks = require('./routes/tasks');
 
 var app = express();
- 
+
 app.use('/client', express.static(path.resolve('./built/client')));
 app.use('/node_modules', express.static(path.resolve('./node_modules')));
 app.use('/lib', express.static(path.resolve('./public/lib')));
@@ -32,6 +33,7 @@ app.use(cookieParser());
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/tasks', tasks);
 
 /*
 /// catch 404 and forwarding to error handler

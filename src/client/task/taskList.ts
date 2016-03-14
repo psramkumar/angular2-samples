@@ -1,29 +1,24 @@
-import {Component,Inject} from 'angular2/core';
+import {Component, Input, Output, EventEmitter} from 'angular2/core';
 import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from 'angular2/common';
-import {TaskService} from './taskService';
+import {Task} from './task';
 
 @Component({
     selector: 'task-list', 
     directives:[CORE_DIRECTIVES],
     template: `
         <div class="col-md-8">
-            <div *ngFor="#task of _taskService.tasks;#i = index" class="alert alert-info alert-dismissible" role="alert">
-                <button type="button" class="close" aria-label="Close" (click)="closeTask(task)"><span aria-hidden="true">&times;</span></button>
-                {{task}}
+            <div *ngFor="#task of tasks;#i = index" [class.alert-info]="selected != task" [class.alert-success]="selected == task" class="alert alert-dismissible" role="alert" (click)="selectedChange.next(task)">
+                <button type="button" class="close" aria-label="Close" (click)="closetask.next($event,task)"><span aria-hidden="true">&times;</span></button>
+                {{task.title}}
             </div>
         </div>
     `
 })
 
 export class TaskList {
-    public _taskService:TaskService;
-    
-    constructor(@Inject(TaskService) taskService:TaskService){
-        this._taskService = taskService;
-    }
-    
-    closeTask(task:string){
-        var index = this._taskService.tasks.indexOf(task);
-        this._taskService.tasks.splice(index,1);
-    }
+    @Input() tasks: Task[];
+    @Input() selected: Task;
+
+    @Output() selectedChange: EventEmitter<Task> = new EventEmitter();
+    @Output() closetask: EventEmitter<Task> = new EventEmitter();
 }

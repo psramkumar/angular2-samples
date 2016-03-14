@@ -1,7 +1,7 @@
 <div class="row">
-    <task-input></task-input>
+    <task-input [(task)]="task" (savetask)="saveTask($event)"></task-input>
 </div>
 <br/>
 <div class="row">
-    <task-list></task-list>
+    <task-list [tasks]="tasks" [(selected)]="task" (closetask)="closetask($event,tsk)"></task-list>
 </div>
