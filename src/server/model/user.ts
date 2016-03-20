@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var url = 'mongodb://localhost:27017/meansample';
 mongoose.connect(url,function(err){
-    console.log(err);
     console.log("mongoose connected...");
 });
 

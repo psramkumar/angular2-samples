@@ -1,0 +1,32 @@
+<h2>Udemy Courses</h2>
+<hr/>
+	<card [c-data]="persons"></card>
+<hr/>
+	<favorite [r-title]="'Course Rating'" [r-data]="ratings" (r-change)="onRatingChange($event)"></favorite>
+<hr/>
+	<like [like-title]="'Angular Likes'" [is-liked]="false" (like-change)="onLikeChange($event)"></like>
+<hr/>
+	<voter [vote-title]="'Angular Votes'" [vote-count]="10" (when-voted)="onVote($event)"></voter>
+<hr/>
+{{title}}
+<input type="text" [value]="title" (input)="title=$event.target.value" autoGrow/>
+<input type="text" [(ngModel)]="title" />
+<input type="text" bindon-ngModel="title" />
+<input type="button" (click)="title=''" [value]="'clear'" />
+<hr/>
+<ul>
+	<li *ngFor="#course of courses">
+		{{course}}
+	</li>
+</ul>
+<hr/>
+
+<input [(ngModel)]="imgUrl" [style.width]="'350px'" />
+<div (click)="onDivClick()">
+	<hr/>
+	<img src="{{imgUrl}}" (click)="onImgClick($event)" />
+	<hr/>
+	<img [src]="imgUrl" />
+	<hr/>
+	<img bind-src="imgUrl" />
+</div>	
