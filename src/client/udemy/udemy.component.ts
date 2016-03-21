@@ -9,6 +9,7 @@ import {LikeComponent} from './like.component'
 import {VoterComponent} from './voter.component'
 import {CardComponent} from './card.component'
 import {ZippyComponent} from './zippy.component'
+import {TreeViewComponent} from './tree-view.component'
 
 @Component({
 	selector:'udemy',
@@ -21,6 +22,7 @@ import {ZippyComponent} from './zippy.component'
 				,VoterComponent
 				,CardComponent
                 ,ZippyComponent
+                ,TreeViewComponent
 	]
 })
 
@@ -30,10 +32,12 @@ export class UdemyComponent {
 	ratings:any[]=[{},{},{},{},{}];			
 	imgUrl:string = "http://lorempixel.com/200/200/";	
 	persons:any[];
+    resmenus:any[];
     	
 	constructor(private udemyService : UdemyService,private personService:PersonService){
 		this.courses = udemyService.getCourses();
 		this.persons = personService.getPersons();
+        this.resmenus = udemyService.getResMenus();
 	}	
 	
 	onImgClick($event){
@@ -56,4 +60,5 @@ export class UdemyComponent {
 	onVote($event){
 		console.log($event);
 	}
+
 }
