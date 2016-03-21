@@ -10,6 +10,10 @@ import {CardComponent} from "./card.component";
 import {ZippyComponent} from "./zippy.component";
 import {TreeViewComponent} from "./tree-view.component";
 import {FeedbackFormComponent} from "./feedback-form.component";
+import {SubscriptionFormComponent} from "./subscription-form.component";
+import {SignupFormComponent} from "./signup-form.component";
+import {ChangePasswordFormComponent} from "./change-password-form.component";
+
 
 @Component({
     selector: "udemy",
@@ -24,6 +28,9 @@ import {FeedbackFormComponent} from "./feedback-form.component";
         , ZippyComponent
         , TreeViewComponent
         , FeedbackFormComponent
+        , SubscriptionFormComponent
+        , SignupFormComponent
+        , ChangePasswordFormComponent
     ]
 })
 
@@ -57,7 +64,7 @@ export class UdemyComponent {
     }
 
     onLikeChange($event) {
-        console.log($event)
+        console.log($event);
     }
 
     onVote($event) {
