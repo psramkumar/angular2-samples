@@ -1,10 +1,10 @@
-import {Component, Input, Output, EventEmitter} from 'angular2/core';
-import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from 'angular2/common';
-import {Task} from './task';
+import {Component, Input, Output, EventEmitter} from "angular2/core";
+import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from "angular2/common";
+import {Task} from "./task";
 
 @Component({
-    selector: 'task-list', 
-    directives:[CORE_DIRECTIVES],
+    selector: "task-list",
+    directives: [CORE_DIRECTIVES],
     template: `
         <div class="col-md-8">
             <div *ngFor="#task of tasks;#i = index" [class.alert-info]="selected != task" [class.alert-success]="selected == task" class="alert alert-dismissible" role="alert" (click)="selectedChange.next(task)">

@@ -1,12 +1,9 @@
-import {Component} from 'angular2/core'
+import {Component} from "angular2/core";
 
 @Component({
-    selector:'nav-menu',
-    template:`
-    
-    `
+    selector: "nav-menu",
+    template: ``
 })
 
-export class NavigationMenuComponet{
-    
+export class NavigationMenuComponet {
 }
