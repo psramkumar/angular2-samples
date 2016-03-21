@@ -1,3 +1,39 @@
+<zippy [z-title]="'ngIf - ngSwitch'">
+	<h3>*ngSwitch</h3>
+	<ul class="nav nav-pills">
+		<li [style.cursor]="'pointer'" [class.active]="activeTab=='tab1'"><a (click)="activeTab='tab1'"> Tab1 </a></li>
+		<li [style.cursor]="'pointer'" [class.active]="activeTab=='tab2'"><a (click)="activeTab='tab2'"> Tab2 </a></li>
+	</ul>
+	<div [ngSwitch]="activeTab">
+		<template [ngSwitchWhen]="'tab1'" ngSwitchDefault>
+			Tab1 Content
+		</template>
+		<template [ngSwitchWhen]="'tab2'">
+			Tab2 Content
+		</template>				
+	</div>
+    <hr/>
+	<h3>*ngIf</h3>
+	<div class="panel">
+		<label>Is Angular is superhero?</label>
+		<div>
+			<span>
+				<input type="radio" name="superhero" (click)="isAngular=1" />Yes
+			</span>
+			<span>
+				<input type="radio" name="superhero" (click)="isAngular=0" />No
+			</span>
+		</div>
+		<div>
+			<span *ngIf="!isAngular"> You should learn angular first..</span>
+			<span [hidden]="!isAngular">:(</span>
+			<span *ngIf="isAngular"> Hope you already know about angular</span>
+			<span [hidden]="isAngular">:)</span>
+			
+		</div>
+	</div>    
+</zippy>
+
 <zippy [z-title]="'Tree View'">
     <tree-view [tree-title]="'Food Menu'" [tree-data]="resmenus"></tree-view>
 </zippy>

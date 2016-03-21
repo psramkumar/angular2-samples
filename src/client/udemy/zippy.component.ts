@@ -2,7 +2,7 @@ import {Component, Input} from "angular2/core";
 
 @Component({
     selector: "zippy",
-    templateUrl: "client/udemy/zippy.template.html"
+    templateUrl: "client/udemy/zippy.component.html"
 })
 
 export class ZippyComponent {

@@ -1,7 +1,6 @@
 import {Component} from "angular2/core";
 
 import {UdemyService} from "./udemy.service";
-import {PersonService} from "./person.service";
 
 import {AutoGrowDirective} from "./auto-grow.directive";
 import {FavoriteComponent} from "./favorite.component";
@@ -13,8 +12,8 @@ import {TreeViewComponent} from "./tree-view.component";
 
 @Component({
     selector: "udemy",
-    templateUrl: "client/udemy/udemy.template.html",
-    providers: [UdemyService, PersonService],
+    templateUrl: "client/udemy/udemy.component.html",
+    providers: [UdemyService],
     directives: [
         AutoGrowDirective
         , FavoriteComponent
@@ -33,10 +32,12 @@ export class UdemyComponent {
     imgUrl: string = "http://lorempixel.com/200/200/";
     persons: any[];
     resmenus: any[];
+    isAngular: boolean = false;
+    activeTab: string = "tab1";
 
-    constructor(private udemyService: UdemyService, private personService: PersonService) {
+    constructor(private udemyService: UdemyService) {
         this.courses = udemyService.getCourses();
-        this.persons = personService.getPersons();
+        this.persons = udemyService.getPersons();
         this.resmenus = udemyService.getResMenus();
     }
 
