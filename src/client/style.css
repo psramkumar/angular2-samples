@@ -6,3 +6,7 @@ button {padding: 0.2em; font-size: 14px}
 body {
     padding-top: 50px;    
 }
+
+.ng-touched.ng-invalid{
+    border:1px solid indianred;
+}

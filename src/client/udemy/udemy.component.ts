@@ -9,6 +9,7 @@ import {VoterComponent} from "./voter.component";
 import {CardComponent} from "./card.component";
 import {ZippyComponent} from "./zippy.component";
 import {TreeViewComponent} from "./tree-view.component";
+import {FeedbackFormComponent} from "./feedback-form.component";
 
 @Component({
     selector: "udemy",
@@ -22,6 +23,7 @@ import {TreeViewComponent} from "./tree-view.component";
         , CardComponent
         , ZippyComponent
         , TreeViewComponent
+        , FeedbackFormComponent
     ]
 })
 
