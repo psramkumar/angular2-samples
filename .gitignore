@@ -4,5 +4,6 @@ bower_components
 typings
 public/lib
 built
+ignore
 .vscode
 
