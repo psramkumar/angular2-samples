@@ -8,6 +8,7 @@ import {FavoriteComponent} from './favorite.component'
 import {LikeComponent} from './like.component'
 import {VoterComponent} from './voter.component'
 import {CardComponent} from './card.component'
+import {ZippyComponent} from './zippy.component'
 
 @Component({
 	selector:'udemy',
@@ -19,18 +20,17 @@ import {CardComponent} from './card.component'
 				,LikeComponent
 				,VoterComponent
 				,CardComponent
+                ,ZippyComponent
 	]
 })
 
 export class UdemyComponent { 
-	title:string = "Udemy course";	
+	title:string = "Angular2 Samples";	
 	courses:string[];
-	ratings:any[]=[{},{},{},{},{}];
-			
-	imgUrl:string = "http://lorempixel.com/400/200/";
-	
+	ratings:any[]=[{},{},{},{},{}];			
+	imgUrl:string = "http://lorempixel.com/200/200/";	
 	persons:any[];
-	
+    	
 	constructor(private udemyService : UdemyService,private personService:PersonService){
 		this.courses = udemyService.getCourses();
 		this.persons = personService.getPersons();

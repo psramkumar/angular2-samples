@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {RouteConfig , ROUTER_DIRECTIVES} from 'angular2/router';
 
 import {DashboardComponent} from '../dashboard/dashboard.component';
 import {ContactsComponent} from '../contacts/contacts.component';
