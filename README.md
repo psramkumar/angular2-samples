@@ -6,6 +6,7 @@ How to Start...
 2. Clone the repo:
     ```
     git clone https://github.com/nirmalkumar86/angular2-samples.git
+    
     cd angular2-samples
     ```
 3. Run the project.
