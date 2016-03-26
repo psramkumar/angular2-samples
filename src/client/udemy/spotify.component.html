@@ -1,0 +1,29 @@
+<!--
+<div class="form-group">
+    <label for="searchArtist">Artist</label>
+    <input id="searchArtist" type="text" class="form-control" [(ngModel)]="searchValue" />
+</div>
+-->
+<form [ngFormModel]="searchForm">
+    <div class="form-group">
+        <label for="searchArtist">Artist</label>
+        <input type="text" class="form-control"
+            id="searchArtist" 
+            ngControl="searchArtist"
+            />
+    </div>
+</form>
+
+<div class="list-group" *ngIf="artists.length > 0">
+    <div class="media" *ngFor="#artist of artists,#i=$index">
+        <a class="pull-left">
+            <img class="media-object" [height]="artist.images[2]?.height" [width]="artist.images[2]?.width" [src]="artist.images[2]?.url"
+            alt="Image">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">{{artist.name}}</h4>
+            <p>{{artist.uri}}</p>
+        </div>
+    </div>
+</div>
+

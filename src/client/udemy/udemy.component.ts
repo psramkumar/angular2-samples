@@ -13,6 +13,7 @@ import {FeedbackFormComponent} from "./feedback-form.component";
 import {SubscriptionFormComponent} from "./subscription-form.component";
 import {SignupFormComponent} from "./signup-form.component";
 import {ChangePasswordFormComponent} from "./change-password-form.component";
+import {SpotifyComponent} from "./spotify.component";
 
 
 @Component({
@@ -31,6 +32,7 @@ import {ChangePasswordFormComponent} from "./change-password-form.component";
         , SubscriptionFormComponent
         , SignupFormComponent
         , ChangePasswordFormComponent
+        , SpotifyComponent
     ]
 })
 
