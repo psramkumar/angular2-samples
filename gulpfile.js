@@ -75,7 +75,17 @@ gulp.task('injectDep', ['buildFrontEnd'], function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(['src/**/*.ts', 'src/**/*.ejs','src/**/*.html'], ['buildBackEnd', 'injectDep']);
+    gulp.watch(
+        [
+            'src/**/*.ts',
+            'src/**/*.ejs',
+            'src/**/*.html'
+        ],
+        [
+        //    'buildBackEnd',
+            'injectDep'
+        ]
+    );
 });
 
 gulp.task('serve', ['buildBackEnd', 'injectDep', 'watch'], function() {

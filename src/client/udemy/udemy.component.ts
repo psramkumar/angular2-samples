@@ -14,7 +14,7 @@ import {SubscriptionFormComponent} from "./subscription-form.component";
 import {SignupFormComponent} from "./signup-form.component";
 import {ChangePasswordFormComponent} from "./change-password-form.component";
 import {SpotifyComponent} from "./spotify.component";
-
+import {PostComponent} from "./post.component";
 
 @Component({
     selector: "udemy",
@@ -33,6 +33,7 @@ import {SpotifyComponent} from "./spotify.component";
         , SignupFormComponent
         , ChangePasswordFormComponent
         , SpotifyComponent
+        , PostComponent
     ]
 })
 
