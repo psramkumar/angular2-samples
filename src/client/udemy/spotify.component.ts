@@ -65,7 +65,7 @@ export class SpotifyComponent {
             .flatMap(this._spotifyService.searchArtists)
             .map(data => {
                 console.log(data);
-                return data.artists;
+                return data["artists"];
             })
             .subscribe(data => this.artists = data.items);
         ;
