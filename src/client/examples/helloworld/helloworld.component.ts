@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component} from "@angular/core";
 @Component({
   // Declare the tag name in index.html to where the component attaches
   selector: "hello-world",

@@ -1,4 +1,4 @@
-import {Component, Input, ViewEncapsulation, Inject} from "angular2/core";
+import {Component, Input, ViewEncapsulation, Inject} from "@angular/core";
 import {TaskInput} from "./taskInput";
 import {TaskList} from "./taskList";
 import {TaskService} from "./taskService";

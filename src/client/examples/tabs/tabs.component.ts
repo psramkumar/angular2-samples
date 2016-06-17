@@ -1,5 +1,5 @@
 import {Component, Directive, Input, QueryList,
-    ViewContainerRef, TemplateRef, ContentChildren} from "angular2/core";
+    ViewContainerRef, TemplateRef, ContentChildren} from "@angular/core";
 @Directive({
     selector: "[ui-pane]"
 })

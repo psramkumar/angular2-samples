@@ -1,5 +1,5 @@
-import {Component, Input, Output, EventEmitter} from "angular2/core";
-import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from "angular2/common";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
+import {CORE_DIRECTIVES, COMMON_DIRECTIVES, FORM_BINDINGS, COMMON_PIPES, FORM_DIRECTIVES} from "@angular/common";
 import {Task} from "./task";
 
 @Component({

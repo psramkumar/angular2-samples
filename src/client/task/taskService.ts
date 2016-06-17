@@ -1,7 +1,7 @@
-import {Injectable} from "angular2/core";
-import {Inject} from "angular2/core";
+import {Injectable} from "@angular/core";
+import {Inject} from "@angular/core";
 import {Task} from "./task";
-import {Http, HTTP_PROVIDERS, Headers} from "angular2/http";
+import {Http, HTTP_PROVIDERS, Headers} from "@angular/http";
 
 @Injectable()
 export class TaskService {

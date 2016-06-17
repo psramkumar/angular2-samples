@@ -1,4 +1,4 @@
-import {Component, Inject, Input, Output, EventEmitter} from "angular2/core";
+import {Component, Inject, Input, Output, EventEmitter} from "@angular/core";
 import {TaskService} from "./taskService";
 import {Task} from "./task";
 

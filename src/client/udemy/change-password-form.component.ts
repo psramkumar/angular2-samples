@@ -1,5 +1,5 @@
-import {Component} from "angular2/core";
-import {ControlGroup, Validators, FormBuilder} from "angular2/common";
+import {Component} from "@angular/core";
+import {ControlGroup, Validators, FormBuilder} from "@angular/common";
 
 import {PasswordValidators} from "./passwordValidators";
 

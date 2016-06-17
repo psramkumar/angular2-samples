@@ -15,29 +15,29 @@ gulp.task('cleanServerDir', function() {
 });
 
 gulp.task('buildBackEnd', ['cleanServerDir'], function() {
-    var tsProject = ts.createProject(path.resolve('./src/server/tsconfig.json'));
+    var tsProject = ts.createProject(path.resolve('tsconfig.json'));
     return gulp.src(path.resolve('./src/server/**/*.ts'))
         .pipe(ts(tsProject))
         .js
-        .pipe(gulp.dest(path.resolve('./built/server')));
+        .pipe(gulp.dest(path.resolve('./built/server/')));
 });
 
 gulp.task('copySrc', ['cleanClientDir'], function() {
-    var _target = gulp.src([path.resolve('./src/client/**/*.css'),path.resolve('./src/client/**/*.html')]);
+    var _target = gulp.src([path.resolve('./src/client/**/*.css'), path.resolve('./src/client/**/*.html')]);
     var _dest = gulp.dest(path.resolve('./built/client/'));
     _target.pipe(_dest);
 });
 
 gulp.task('buildFrontEnd', ['copySrc'], function() {
-    var tsProject = ts.createProject(path.resolve('./src/client/tsconfig.json'));
+    var tsProject = ts.createProject(path.resolve('tsconfig.json'));
     return gulp.src(path.resolve('./src/client/**/*.ts'))
         .pipe(ts(tsProject))
         .js
         .pipe(gulp.dest(path.resolve('./built/client/')));
 });
 
-gulp.task('injectDep', ['buildFrontEnd'], function () {
-    
+gulp.task('injectDep', ['buildFrontEnd'], function() {
+
     var wiredep = require('wiredep').stream;
     var options = {
         "overrides": {
@@ -55,12 +55,10 @@ gulp.task('injectDep', ['buildFrontEnd'], function () {
     var target = gulp.src(path.resolve('./src/client/**/*.ejs'));
     var dest = gulp.dest(path.resolve('./built/client/'));
     var angular2_sources = gulp.src([
-        'node_modules/angular2/bundles/angular2-polyfills.js',
+        'node_modules/core-js/client/shim.min.js',
+        'node_modules/zone.js/dist/zone.js',
+        'node_modules/reflect-metadata/Reflect.js',
         'node_modules/systemjs/dist/system.src.js',
-        'node_modules/rxjs/bundles/Rx.js',
-        'node_modules/angular2/bundles/angular2.dev.js',
-        'node_modules/angular2/bundles/router.dev.js',
-        'node_modules/angular2/bundles/http.dev.js',
         'built/client/style.css'
     ], {
         read: false
@@ -80,8 +78,7 @@ gulp.task('watchClient', function() {
             'src/client/**/*.ts',
             'src/client/**/*.ejs',
             'src/client/**/*.html'
-        ],
-        [
+        ], [
             'injectDep'
         ]
     );
@@ -91,8 +88,7 @@ gulp.task('watchServer', function() {
     gulp.watch(
         [
             'src/server/**/*.*',
-        ],
-        [
+        ], [
             'buildBackEnd'
         ]
     );
@@ -104,36 +100,36 @@ gulp.task('watch', [
 ]);
 
 gulp.task('serve', ['buildBackEnd', 'injectDep', 'watch'], function() {
-    nodemon({
-        script: './built/server/server.js'
-    }).on('restart', function() {
-        console.log('nodemon restarted server.js');
-    })
+    // nodemon({
+    //     script: './built/server/server.js'
+    // }).on('restart', function() {
+    //     console.log('nodemon restarted server.js');
+    // })
 });
 
-gulp.task('serve-client', ['buildBackEnd', 'injectDep', 'watchClient'], function (cb) {
+gulp.task('serve-client', ['buildBackEnd', 'injectDep', 'watchClient'], function(cb) {
     var started = false;
     nodemon({
         script: './built/server/server.js'
-    }).on('start', function () {
-		if (!started) {
-			cb();
-			started = true; 
-		} 
-	}).on('restart', function() {
+    }).on('start', function() {
+        if (!started) {
+            cb();
+            started = true;
+        }
+    }).on('restart', function() {
         console.log('nodemon restarted server.js');
     });
 });
 
 gulp.task('browser-sync', ['serve-client'], function() {
-	console.log('browser-sync');
-	browserSync.init(null, {
-		proxy: "http://localhost:3000",
+    console.log('browser-sync');
+    browserSync.init(null, {
+        proxy: "http://localhost:3000",
         files: ["built/client/**/*.*"]
-        //,
-        //browser: "google chrome",
-        //port: 5000,
-	});
+            //,
+            //browser: "google chrome",
+            //port: 5000,
+    });
 });
 
 gulp.task('start', ['browser-sync']);

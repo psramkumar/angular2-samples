@@ -1,7 +1,7 @@
-import {Injectable} from "angular2/core";
-import {Inject} from "angular2/core";
+import {Injectable} from "@angular/core";
+import {Inject} from "@angular/core";
 import {Contact} from "./contact";
-import {Http, HTTP_PROVIDERS} from "angular2/http";
+import {Http, HTTP_PROVIDERS} from "@angular/http";
 
 @Injectable()
 export class ContactService {

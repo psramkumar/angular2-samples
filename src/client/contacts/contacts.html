@@ -1,6 +1,6 @@
 <h2>Select a Contact</h2>
 <ul class="contacts">
-	<li *ngFor="#contact of contacts" (click)="onSelect(contact)">
+	<li *ngFor="let contact of contacts" (click)="onSelect(contact)">
 		<span class="badge">{{contact.id}}</span> {{contact.username}}
 	</li>
 </ul>
