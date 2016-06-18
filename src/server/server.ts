@@ -1,18 +1,19 @@
+/// <reference path="../../typings/index.d.ts" />
+
 import express = require("express");
 import path = require("path");
+import favicon = require("serve-favicon");
+import logger = require("morgan");
+import cookieParser = require("cookie-parser");
+import bodyParser = require("body-parser");
 
-let favicon = require("serve-favicon");
-let logger = require("morgan");
-let cookieParser = require("cookie-parser");
-let bodyParser = require("body-parser");
+import engine = require("ejs-mate");
 
-let engine = require("ejs-mate");
+import routes = require("./routes/index");
+import users = require("./routes/users");
+import tasks = require("./routes/tasks");
+
 let port: number = process.env.PORT || 3000;
-
-let routes = require("./routes/index");
-let users = require("./routes/users");
-let tasks = require("./routes/tasks")
-
 let app = express();
 
 app.use("/client", express.static(path.resolve("./built/client")));

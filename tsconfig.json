@@ -16,6 +16,6 @@
         "jspm_packages",
         "typings",
         "public",
-        "build"
+        "built"
     ]
 }

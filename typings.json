@@ -1,13 +1,12 @@
 {
   "name": "angular2-samples",
-  "version": false,
-  "ambientDependencies": {
-    "node": "registry:dt/node#4.0.0+20160509154515",
-    "express": "github:DefinitelyTyped/DefinitelyTyped/express/express.d.ts#c6ec979f1a19765c8c577b72bdea40da3f20076e",
-    "serve-static": "github:DefinitelyTyped/DefinitelyTyped/serve-static/serve-static.d.ts#c6ec979f1a19765c8c577b72bdea40da3f20076e",
-    "mime": "github:DefinitelyTyped/DefinitelyTyped/mime/mime.d.ts#c6ec979f1a19765c8c577b72bdea40da3f20076e",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#a44529fcb1e1cdc0355e71c42a6048de99b57c34",
-    "underscore": "github:DefinitelyTyped/DefinitelyTyped/underscore/underscore.d.ts#a44529fcb1e1cdc0355e71c42a6048de99b57c34",
-    "core-js": "registry:dt/core-js#0.0.0+20160317120654"
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "express": "registry:dt/express#4.0.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
+    "mime": "registry:dt/mime#0.0.0+20160316155526",
+    "node": "registry:dt/node#6.0.0+20160613154055",
+    "require": "registry:dt/require#2.1.20+20160316155526",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   }
 }

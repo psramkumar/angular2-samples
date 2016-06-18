@@ -1,6 +1,6 @@
 // grab the things we need
-mongoose = require("mongoose");
-Schema = mongoose.Schema;
+import mongoose = require("mongoose");
+let Schema = mongoose.Schema;
 let url = "mongodb://localhost:27017/meansample";
 mongoose.connect(url, function(err) {
     console.log("mongoose connected...");

@@ -9,9 +9,9 @@ import {SpotifyService} from "./spotify.service";
 @Component({
     selector: "spotify",
     providers: [SpotifyService],
-       template: `
-           <input id="search1" type="text" class="form-control" (keyup)="onkeyup($event)" />
-       `
+    //    template: `
+    //        <input id="search1" type="text" class="form-control" (keyup)="onkeyup($event)" />
+    //    `
     templateUrl: "client/udemy/spotify.component.html"
 })
 export class SpotifyComponent {

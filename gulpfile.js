@@ -100,11 +100,11 @@ gulp.task('watch', [
 ]);
 
 gulp.task('serve', ['buildBackEnd', 'injectDep', 'watch'], function() {
-    // nodemon({
-    //     script: './built/server/server.js'
-    // }).on('restart', function() {
-    //     console.log('nodemon restarted server.js');
-    // })
+    nodemon({
+        script: './built/server/server.js'
+    }).on('restart', function() {
+        console.log('nodemon restarted server.js');
+    })
 });
 
 gulp.task('serve-client', ['buildBackEnd', 'injectDep', 'watchClient'], function(cb) {
