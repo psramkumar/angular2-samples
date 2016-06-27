@@ -12,6 +12,7 @@ import engine = require("ejs-mate");
 import routes = require("./routes/index");
 import users = require("./routes/users");
 import tasks = require("./routes/tasks");
+import bookmarks = require("./routes/bookmarks");
 
 let port: number = process.env.PORT || 3000;
 let app = express();
@@ -32,9 +33,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+
 app.use("/", routes);
 app.use("/users", users);
 app.use("/tasks", tasks);
+app.use("/bookmarks", bookmarks);
 
 /*
 /// catch 404 and forwarding to error handler

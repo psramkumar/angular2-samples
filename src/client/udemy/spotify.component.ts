@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+
 import {Component, ElementRef, Input, Output} from "@angular/core";
 import {ControlGroup, FormBuilder, Validators} from "@angular/common";
 import {Observable} from "rxjs/Observable";
@@ -16,19 +16,19 @@ import {SpotifyService} from "./spotify.service";
 })
 export class SpotifyComponent {
     private _debounced: any;
-    constructor(el: ElementRef) {
-        this._debounced = _.debounce((text) => {
-                let url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
-                $.getJSON(url, (artists) => {
-                    console.log(artists);
-            });
-        }, 400);
-    }
-    onkeyup(e) {
-        let text = e.target.value;
-        if (text.length < 3) return;
-        this._debounced(text);
-    }
+    // constructor(el: ElementRef) {
+    //     this._debounced = _.debounce((text) => {
+    //             let url = "https://api.spotify.com/v1/search?type=artist&q=" + text;
+    //             $.getJSON(url, (artists) => {
+    //                 console.log(artists);
+    //         });
+    //     }, 400);
+    // }
+    // onkeyup(e) {
+    //     let text = e.target.value;
+    //     if (text.length < 3) return;
+    //     this._debounced(text);
+    // }
 
 
     searchForm: ControlGroup;

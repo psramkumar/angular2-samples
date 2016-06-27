@@ -4,11 +4,9 @@ import {DashboardComponent} from "../dashboard/dashboard.component";
 import {ContactsComponent} from "../contacts/contacts.component";
 import {TaskComponent} from "../task/task.component";
 import {UdemyComponent} from "../udemy/udemy.component";
-import {ExamplesComponent} from "../examples/examples.component";
 
-import {HelloWorldComponent} from "../examples/helloworld/helloworld.component";
-import {TodoComponent} from "../examples/todo/todo.component";
-import {TabDemoComponent} from "../examples/tabs/demo.component";
+import {ExamplesRoutes} from "../examples/examples.routes";
+import {WorkshopRoutes} from "../workshop/workshop.routes";
 
 const routes : RouterConfig = [
     {
@@ -27,26 +25,9 @@ const routes : RouterConfig = [
         path: "udemy",
         component: UdemyComponent
     },
-    {
-        path:"examples",
-        component:ExamplesComponent,
-        children:[
-            {
-                path: "helloworld",
-                component: HelloWorldComponent
-            },
-            {
-                path: "todo",
-                component: TodoComponent
-            },
-            {
-                path: "tabs",
-                component: TabDemoComponent
-            }           
-        ]
-    }
+    ...ExamplesRoutes,
+    ...WorkshopRoutes
+        
 ];
 
-export const APP_ROUTES_PROVIDER = [
-    provideRouter(routes)
-];
+export const APP_ROUTES_PROVIDER = provideRouter(routes);

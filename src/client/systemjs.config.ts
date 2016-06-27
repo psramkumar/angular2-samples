@@ -33,8 +33,18 @@
   function ngPackageIndex(pkgName) {
     packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
   }
+
+  // Bundled (~40 requests):
+  function packUmd(pkgName) {
+    if(pkgName == 'router')
+    packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
+    else
+      packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+
+  }
+  
   // Add package entries for angular packages
-  ngPackageNames.forEach(ngPackageIndex);
+  ngPackageNames.forEach(packUmd);
   var config = {
     map: map,
     packages: packages

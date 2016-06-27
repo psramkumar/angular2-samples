@@ -8,13 +8,14 @@
         "experimentalDecorators": true,
         "removeComments": false,
         "noImplicitAny": false,
-        "noResolve":true
+        "noResolve":false
     },
     "exclude": [
         "node_modules",
         "bower_components",
         "jspm_packages",
         "typings",
+        "typings/index.d.ts",
         "public",
         "built"
     ]

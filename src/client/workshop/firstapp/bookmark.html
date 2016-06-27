@@ -1,0 +1,9 @@
+<div class="panel panel-default bookmark-item">
+    <div class="panel-body">
+        <h4>{{bookmark.title | uppercase}}</h4>
+        <a [href]="bookmark.address">{{bookmark.address}}</a>
+        <div class="favorite">
+            <favorite (r-change)="toggleFavorite($event)"></favorite>
+        </div>
+    </div>
+</div>

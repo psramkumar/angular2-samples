@@ -1,25 +1,5 @@
 import {Component} from "@angular/core";
-import {Routes, ROUTER_DIRECTIVES, Router} from "@angular/router";
-
-// @Routes([
-//     {
-//         path: "/dashboard",
-//         component: DashboardComponent,
-//         index: true
-//     },
-//     {
-//         path: "/tasks",
-//         component: TaskComponent
-//     },
-//     {
-//         path: "/contacts",
-//         component: ContactsComponent
-//     },
-//     {
-//         path: "/udemy",
-//         component: UdemyComponent
-//     }
-// ])
+import {ROUTER_DIRECTIVES, Router} from "@angular/router";
 
 @Component({
     selector: "app",
